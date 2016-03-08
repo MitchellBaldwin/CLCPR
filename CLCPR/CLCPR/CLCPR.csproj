@@ -86,6 +86,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CLCPR COMM Protocol R0.pdf" />
     <None Include="Resources\up.ico" />
   </ItemGroup>
   <ItemGroup>
