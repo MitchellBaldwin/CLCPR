@@ -32,24 +32,15 @@ namespace CLCPR
         // Defines
         public const Byte CommFramingByte = 0x00;           // Identifies the end of a serial message 
         public const Byte TextMsgMsgType = 0x00;            // The packet contains a text message (bi-directional)
-        public const Byte SetModeMsgType = 0x01;            // The packet is a Set Mode command (Host to PHTMD)
+        public const Byte SetModeMsgType = 0x01;            // The packet is a Set Mode command (Host to CLCPR device)
         
-        public const Byte StartDataFeed = 0x02;             // Start the serial data stream from the PHTM device (Host to PHTMD)
-        public const Byte StopDataFeed = 0x03;              // Stop the serial data stream from the PHTM device (Host to PHTMD)
+        public const Byte GetCPRFunctionStates = 0x10;      // Get the state flags from the CLCPR device
+        public const Byte SetCPRFunctionStates = 0x11;      // Set the state flags on the CLCPR device - use to start/stop functions, e.g.
+
+        public const Byte SensorDataMsgType = 0x18;         // Packet containing sensor measurements (CLCPR device to Host)
+
+        public const Byte SetCPRPhaseTimesMsgType = 0x20;   // Set CPR function phase times
         
-        public const Byte LS1ONMsgType = 0x04;              // Connect LS2 to pump
-        public const Byte LS1OFFMsgType = 0x05;             // Connect LS2 to atmosphere
-        public const Byte LS2ONMsgType = 0x06;              // Connect cuff to LS1
-        public const Byte LS2OFFMsgType = 0x07;             // Connect cuff to bleed port
-
-        public const Byte SetLoopPeriodMsgType = 0x08;      // Sets the main loop delay time (Host to PHTMD)
-
-        public const Byte FillCuffMsgType = 0x10;           // Set valves and pump to fill cuff to target pressure; command packet includes (initial) 
-        public const Byte HoldCuffMsgType = 0x11;           // Set valves to hold cuff pressure (Host to PHTMD)
-        public const Byte BleedCuffMsgType = 0x12;          // Set valves to bleed (to target pressure?) cuff (Host to PHTMD)
-        public const Byte VentCuffMsgType = 0x13;           // Set valves to vent cuff (Host to PHTMD)
-
-        public const Byte SensorDataMsgType = 0x18;         // Packet containing PPG & pressure sensor measurements (PHTMD to Host)
         #endregion // Message type definitions
 
         // Buffers for serial communication with the embedded device
@@ -430,7 +421,35 @@ namespace CLCPR
             buf[0] = 0x01;
             buf[1] = 0x55;
             buf[2] = 0xAA;
-            BuildAndSendCommandMessage(FillCuffMsgType, buf);
+            BuildAndSendCommandMessage(GetCPRFunctionStates, buf);
+        }
+
+        private void sendCPRParametersButton_Click(object sender, EventArgs e)
+        {
+            Byte[] buf = new Byte[8];
+
+            UInt16 compTime = 333;
+            UInt16 decompTime = 333;
+            UInt16 inspTime = 1000;
+            UInt16 expTime = 4000;
+
+            buf[0] = (Byte)(compTime % 256);
+            buf[1] = (Byte)(compTime / 256);
+            buf[2] = (Byte)(decompTime % 256);
+            buf[3] = (Byte)(decompTime / 256);
+            buf[4] = (Byte)(inspTime % 256);
+            buf[5] = (Byte)(inspTime / 256);
+            buf[6] = (Byte)(expTime % 256);
+            buf[7] = (Byte)(expTime / 256);
+
+            BuildAndSendCommandMessage(SetCPRPhaseTimesMsgType, buf);
+
+            for (int i=0; i<8; ++i)
+            {
+                buf[i] = 0x00;
+            }
+            buf[0] = 0x0F;
+            BuildAndSendCommandMessage(SetCPRFunctionStates, buf);
         }
 
 

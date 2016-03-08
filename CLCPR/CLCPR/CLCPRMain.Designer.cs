@@ -102,6 +102,7 @@
             this.CLCPRSerialPort = new System.IO.Ports.SerialPort(this.components);
             this.testEncodingButton = new System.Windows.Forms.Button();
             this.clcprDisplayUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.sendCPRParametersButton = new System.Windows.Forms.Button();
             this.compressionForcePanel.SuspendLayout();
             this.decompressionForcePanel.SuspendLayout();
             this.compressionRatePanel.SuspendLayout();
@@ -540,7 +541,7 @@
             this.synchronizeVentilationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.synchronizeVentilationCheckBox.Location = new System.Drawing.Point(66, 292);
             this.synchronizeVentilationCheckBox.Name = "synchronizeVentilationCheckBox";
-            this.synchronizeVentilationCheckBox.Size = new System.Drawing.Size(136, 17);
+            this.synchronizeVentilationCheckBox.Size = new System.Drawing.Size(178, 21);
             this.synchronizeVentilationCheckBox.TabIndex = 74;
             this.synchronizeVentilationCheckBox.Text = "Synchronize Ventilation";
             this.synchronizeVentilationCheckBox.UseVisualStyleBackColor = true;
@@ -575,7 +576,7 @@
             this.packetDisplayLabel.Location = new System.Drawing.Point(13, 83);
             this.packetDisplayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.packetDisplayLabel.Name = "packetDisplayLabel";
-            this.packetDisplayLabel.Size = new System.Drawing.Size(40, 17);
+            this.packetDisplayLabel.Size = new System.Drawing.Size(49, 20);
             this.packetDisplayLabel.TabIndex = 47;
             this.packetDisplayLabel.Text = "PKT:";
             // 
@@ -585,7 +586,7 @@
             this.testModeCheckBox.Location = new System.Drawing.Point(756, 10);
             this.testModeCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.testModeCheckBox.Name = "testModeCheckBox";
-            this.testModeCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.testModeCheckBox.Size = new System.Drawing.Size(97, 21);
             this.testModeCheckBox.TabIndex = 46;
             this.testModeCheckBox.Text = "Test mode";
             this.testModeCheckBox.UseVisualStyleBackColor = true;
@@ -617,7 +618,7 @@
             this.showAllBufferUpdatesCheckBox.Location = new System.Drawing.Point(868, 9);
             this.showAllBufferUpdatesCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.showAllBufferUpdatesCheckBox.Name = "showAllBufferUpdatesCheckBox";
-            this.showAllBufferUpdatesCheckBox.Size = new System.Drawing.Size(137, 17);
+            this.showAllBufferUpdatesCheckBox.Size = new System.Drawing.Size(178, 21);
             this.showAllBufferUpdatesCheckBox.TabIndex = 43;
             this.showAllBufferUpdatesCheckBox.Text = "Show all buffer updates";
             this.showAllBufferUpdatesCheckBox.UseVisualStyleBackColor = true;
@@ -630,7 +631,7 @@
             this.bytePositionLabel.Location = new System.Drawing.Point(12, 31);
             this.bytePositionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bytePositionLabel.Name = "bytePositionLabel";
-            this.bytePositionLabel.Size = new System.Drawing.Size(808, 16);
+            this.bytePositionLabel.Size = new System.Drawing.Size(1009, 20);
             this.bytePositionLabel.TabIndex = 42;
             this.bytePositionLabel.Text = "POS: 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 1" +
     "9 1A 1B 1C 1D 1E 1F";
@@ -642,7 +643,7 @@
             this.inBufferDisplayLabel.Location = new System.Drawing.Point(12, 66);
             this.inBufferDisplayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.inBufferDisplayLabel.Name = "inBufferDisplayLabel";
-            this.inBufferDisplayLabel.Size = new System.Drawing.Size(40, 17);
+            this.inBufferDisplayLabel.Size = new System.Drawing.Size(49, 20);
             this.inBufferDisplayLabel.TabIndex = 41;
             this.inBufferDisplayLabel.Text = "IN: ";
             // 
@@ -653,7 +654,7 @@
             this.outBufferDisplayLabel.Location = new System.Drawing.Point(12, 50);
             this.outBufferDisplayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outBufferDisplayLabel.Name = "outBufferDisplayLabel";
-            this.outBufferDisplayLabel.Size = new System.Drawing.Size(48, 16);
+            this.outBufferDisplayLabel.Size = new System.Drawing.Size(59, 20);
             this.outBufferDisplayLabel.TabIndex = 40;
             this.outBufferDisplayLabel.Text = "OUT: ";
             // 
@@ -663,7 +664,7 @@
             this.clcprConnectCheckBox.Location = new System.Drawing.Point(660, 9);
             this.clcprConnectCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.clcprConnectCheckBox.Name = "clcprConnectCheckBox";
-            this.clcprConnectCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.clcprConnectCheckBox.Size = new System.Drawing.Size(82, 21);
             this.clcprConnectCheckBox.TabIndex = 39;
             this.clcprConnectCheckBox.Text = "Connect";
             this.clcprConnectCheckBox.UseVisualStyleBackColor = true;
@@ -715,7 +716,7 @@
             this.clcrpLabel.Location = new System.Drawing.Point(12, 11);
             this.clcrpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clcrpLabel.Name = "clcrpLabel";
-            this.clcrpLabel.Size = new System.Drawing.Size(147, 13);
+            this.clcrpLabel.Size = new System.Drawing.Size(196, 17);
             this.clcrpLabel.TabIndex = 33;
             this.clcrpLabel.Text = "CLCPR Main Controller Serial:";
             // 
@@ -842,7 +843,7 @@
             this.COMPortToolStripComboBox});
             this.clcprMainToolBar.Location = new System.Drawing.Point(0, 0);
             this.clcprMainToolBar.Name = "clcprMainToolBar";
-            this.clcprMainToolBar.Size = new System.Drawing.Size(1058, 27);
+            this.clcprMainToolBar.Size = new System.Drawing.Size(1058, 28);
             this.clcprMainToolBar.TabIndex = 88;
             this.clcprMainToolBar.Text = "CLCPRMainToolStrip";
             // 
@@ -852,7 +853,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton1.Text = "connectToolStripButton";
             // 
             // toolStripButton2
@@ -861,7 +862,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton2.Text = "loadToolStripButton";
             // 
             // toolStripButton3
@@ -870,7 +871,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton3.Text = "saveToolStripButton";
             // 
             // toolStripButton4
@@ -879,7 +880,7 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton4.Text = "infoToolStripButton";
             // 
             // COMPortToolStripComboBox
@@ -895,7 +896,7 @@
             "COM8",
             "COM9"});
             this.COMPortToolStripComboBox.Name = "COMPortToolStripComboBox";
-            this.COMPortToolStripComboBox.Size = new System.Drawing.Size(121, 27);
+            this.COMPortToolStripComboBox.Size = new System.Drawing.Size(121, 28);
             this.COMPortToolStripComboBox.Text = global::CLCPR.Properties.Settings.Default.comPortTexrApplicationSetting;
             this.COMPortToolStripComboBox.TextChanged += new System.EventHandler(this.COMPortToolStripComboBox_TextChanged);
             // 
@@ -918,10 +919,21 @@
             // 
             this.clcprDisplayUpdateTimer.Tick += new System.EventHandler(this.clcprDisplayUpdateTimer_Tick);
             // 
+            // sendCPRParametersButton
+            // 
+            this.sendCPRParametersButton.Location = new System.Drawing.Point(793, 162);
+            this.sendCPRParametersButton.Name = "sendCPRParametersButton";
+            this.sendCPRParametersButton.Size = new System.Drawing.Size(252, 39);
+            this.sendCPRParametersButton.TabIndex = 90;
+            this.sendCPRParametersButton.Text = "Send CPR Parameters";
+            this.sendCPRParametersButton.UseVisualStyleBackColor = true;
+            this.sendCPRParametersButton.Click += new System.EventHandler(this.sendCPRParametersButton_Click);
+            // 
             // CLCPRMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1058, 721);
+            this.Controls.Add(this.sendCPRParametersButton);
             this.Controls.Add(this.testEncodingButton);
             this.Controls.Add(this.clcprMainToolBar);
             this.Controls.Add(this.ventilationVolumeUnitsLabel);
@@ -1040,6 +1052,7 @@
         private System.Windows.Forms.Label packetDisplayLabel;
         private System.Windows.Forms.Button testEncodingButton;
         private System.Windows.Forms.Timer clcprDisplayUpdateTimer;
+        private System.Windows.Forms.Button sendCPRParametersButton;
     }
 }
 
