@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cobsEnDeCodeForm", "..\cobs
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CLCPRDevice", "CLCPRDevice\CLCPRDevice.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4A461B8-DCF2-4515-A5C2-1067E8DE1AB0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Users\Mitchell\Documents\Projects\KRWard\Closed Loop CPR System\CLCPR COMM Protocol R0.pdf = ..\..\Users\Mitchell\Documents\Projects\KRWard\Closed Loop CPR System\CLCPR COMM Protocol R0.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
