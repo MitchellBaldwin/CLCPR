@@ -441,7 +441,6 @@ namespace CLCPR
             buf[5] = (Byte)(inspTime / 256);
             buf[6] = (Byte)(expTime % 256);
             buf[7] = (Byte)(expTime / 256);
-
             BuildAndSendCommandMessage(SetCPRPhaseTimesMsgType, buf);
 
             for (int i=0; i<8; ++i)
