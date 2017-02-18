@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoadWorkboatSplashscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadWorkboatSplashscreen.Designer.cs">
+      <DependentUpon>LoadWorkboatSplashscreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="TTLCalibMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoadWorkboatSplashscreen.resx">
+      <DependentUpon>LoadWorkboatSplashscreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TTLCalibMain.resx">
       <DependentUpon>TTLCalibMain.cs</DependentUpon>
     </EmbeddedResource>
